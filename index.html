@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Random Question — Arcade</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Nunito:wght@600;800&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg" id="bg"></div><canvas id="fx"></canvas>
+<div class="app">
+  <div class="top"><span class="badge" id="who"></span><button class="sm" id="chg" hidden>Change nickname</button><button class="sm" id="snd" aria-label="Sound">🔊</button></div>
+  <h1>ARCADE<small>Random Question</small></h1>
+  <div class="hud">
+    <div>SCORE<b id="score">0</b></div>
+    <div>STREAK<b id="streak">0</b></div>
+    <div>ROUND<b id="round">0/10</b></div>
+  </div>
+  <div class="bar" id="barwrap"><i id="bar"></i></div>
+  <section class="card" id="card">
+    <div id="reg"><h2>Welcome, player!</h2><p class="info">Pick a nickname to start. No login needed.</p><input id="nick" maxlength="14" placeholder="Your nickname" autocomplete="off"><p class="err" id="err"></p><button class="big" id="go">START PLAYING</button></div>
+    <div class="reel" id="reel">READY?</div>
+    <div id="qbox" hidden><h2 id="q"></h2><div class="life"><button class="sm" id="hint">💡 Hint (−20)</button><button class="sm" id="half">✂ 50/50 (−40)</button></div><p class="hint" id="hinttxt" hidden></p><div class="opts" id="opts"></div></div>
+    <div id="res" hidden><div class="banner" id="banner"></div><p class="info" id="info"></p></div>
+    <div id="fin" hidden>
+      <div class="banner ok" id="ftitle">GAME OVER</div><p class="info" id="fmsg"></p>
+      <div class="sum">
+        <div>CORRECT<b id="f1">0</b></div><div>WRONG<b id="f2">0</b></div>
+        <div>POINTS<b id="f3">0</b></div><div>ACCURACY<b id="f4">0%</b></div>
+      </div>
+      <img id="cert" class="cert" alt="Your certificate"><a class="big" id="dl" download="certificate.png">DOWNLOAD CERTIFICATE</a>
+    </div>
+    <button class="big" id="main">SPIN!</button>
+    <p class="cnt" id="cnt"></p>
+  </section>
+  <details>
+    <summary>Load your full question bank</summary>
+    <p>Paste text: 5 lines per question (question, <b>correct answer first</b>, then 3 wrong answers).</p>
+    <textarea id="src" placeholder="Paste questions here..."></textarea>
+    <button class="sm" id="load">Load</button> <small id="msg"></small>
+  </details>
+  <p class="cnt" id="foot"></p>
+</div>
+<script src="questions.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
